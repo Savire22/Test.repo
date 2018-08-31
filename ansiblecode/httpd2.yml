@@ -19,6 +19,7 @@
        - name: "copyingindex file"
          copy: src=index.html dest=/root/Test.repo/ansiblecode/index.html
          when: httpd_validation|success
-
+         notify: "starting httpd service" 
+     handlers:       
        - name: "starting httpd service"
          service: name=httpd state=started
