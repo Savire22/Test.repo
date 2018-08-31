@@ -1,0 +1,7 @@
+---
+  - hosts: localhost
+    vars: 
+     username: "{{user_name}}"
+    tasks: 
+      - name: Print username
+        debug: msg=}}username}}

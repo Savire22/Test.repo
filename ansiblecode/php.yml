@@ -2,12 +2,11 @@
   - hosts: localhost
     become: true
     tasks:
-
-       - name: install php
+      - name: install php
          yum: name=php state=installed disable_gpg_check=yes
          register: php_install
 
-       - name: checking php
+      - name: checking php
          command: php -v
          when: php_install|success
          
